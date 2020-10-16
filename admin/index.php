@@ -8,7 +8,7 @@ if($con ->auth()){
             include_once 'controller/produk.php';
             break;
         default;
-            include_once 'controller/home.php';
+            include_once 'controller/produk.php';
     }
 }else{
     //panggil login

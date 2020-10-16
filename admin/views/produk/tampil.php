@@ -17,6 +17,7 @@
                         #
                     </td>
                     <td>Nama</td>
+                    <td>Jenis Produk</td>
                     <td>Harga</td>
                     <td>Kode Produk</td>
                     <td>Aksi</td>
@@ -29,6 +30,7 @@
                 <tr>
                     <td><?=$no?></td>
                     <td><?=$row['nama_produk']?></td>
+                    <td><?=$row['jenis_produk']?></td>
                     <td>Rp. <?=$row['harga']?></td>
                     <td><?=$row['kode_produk']?></td>
                     <td>
