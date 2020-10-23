@@ -8,8 +8,8 @@
             <span class="text-danger"><?=(isset($err['nama_produk']))?$err['nama_produk']:'';?></span>
         </div>
         <div class="form-group">
-            <label for="">Kode Produk</label>
-            <input type="text" name="kode_produk" required value="<?=(isset($_POST['kode_produk']))?$_POST['kode_produk']:'';?>" class="form-control">
+            <label for="">ID Produksi</label>
+            <input type="text" name="id_produksi" required value="<?=(isset($_POST['id_produksi']))?$_POST['id_produksi']:'';?>" class="form-control">
             
         </div>
         <div class="form-group">

@@ -16,10 +16,12 @@
                     <td>
                         #
                     </td>
+                    
                     <td>Nama</td>
                     <td>Jenis Produk</td>
                     <td>Harga</td>
                     <td>Kode Produk</td>
+                    
                     <td>Aksi</td>
                 </tr>
             </thead>
@@ -31,12 +33,13 @@
                     <td><?=$no?></td>
                     <td><?=$row['nama_produk']?></td>
                     <td><?=$row['jenis_produk']?></td>
-                    <td>Rp. <?=$row['harga']?></td>
+                    <td>Rp. <?=number_format($row['harga'])?></td>
                     <td><?=$row['kode_produk']?></td>
+                    
                     <td>
-                        <a href="index.php?mod=produk&page=edit&id=<?=md5($row['kode_produk'])?>"><i
+                        <a href="index.php?mod=produk&page=edit&id=<?=md5($row['id_produksi'])?>"><i
                                 class="fa fa-pencil"></i> </a>
-                        <a href="index.php?mod=produk&page=delete&id=<?=md5($row['kode_produk'])?>"><i
+                        <a href="index.php?mod=produk&page=delete&id=<?=($row['id_produksi'])?>"><i
                                 class="fa fa-trash"></i> </a>
                     </td>
                 </tr>

@@ -25,7 +25,7 @@
       <div class="collapse navbar-collapse" id="myNavbar">
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          <li><a href="../admin/controller/logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
       </div>
 
@@ -36,8 +36,9 @@
         <div class="row content">
           <div class="col-sm-3 sidenav">
             <ul class="nav nav-pills nav-stacked">
-              <li class="active"><a href="../admin/produk.php">Data Produk</a></li>
-              <li class="active"><a href="../admin/produk.php">Data Pembeli</a></li>
+            <li class="active"><a href="index.php?mod=home">Home</a></li>
+              <li class="active"><a href="index.php?mod=a_data">Data Admin</a></li>
+              <li class="active"><a href="index.php?mod=produk">Data Produk</a></li>
             </ul><br>
           </div>
           <div class="col-sm-9">

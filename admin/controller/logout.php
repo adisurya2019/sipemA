@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_destroy();
-header('Location : http://localhost/sipemA/admin')
+header('Location: http://localhost:8080/sipemA/admin');
 ?>

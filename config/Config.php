@@ -13,6 +13,9 @@ class Config{
         }else{
             return false;
         }
+        function site_url(){
+            return "http://localhost/sipemA/";
+        }
     }
 }
 ?>

@@ -11,8 +11,8 @@ switch (@$_GET['page']){
             if(empty($_POST['nama_produk'])){
                 $err['nama_produk']="Nama produk Wajib";
             }
-            if(empty($_POST['kode_produk'])){
-                $err['kode_produk']="wajib diisi";
+            if(empty($_POST['id_produksi'])){
+                $err['id_produksi']="wajib diisi";
             }
             if(empty($_POST['jenis_produk'])){
                 $err['jenis_produk']="wajib diisi";
@@ -21,10 +21,16 @@ switch (@$_GET['page']){
                 $err['harga']="wajib diisi";
             }
             if(!isset($err)){
-            $sql = "INSERT INTO produk (kode_produk, nama_produk, jenis_produk, harga) 
-            VALUES ('$_POST[kode_produk]', '$_POST[nama_produk]', '$_POST[jenis_produk]', '$_POST[harga]')";
+             //update
+             if(!empty($_POST['kode_produk'])){
+             $sql="update produk set nama_produk='$_POST[nama_produk]', kode_produk='$_POST[kode_produk]', jenis_produk='$_POST[jenis_produk]', harga='$_POST[harga]' where md5(id_produksi)='$_POST[id_produksi]'";
+             //save
+            }else{
+                $sql = "INSERT INTO produk (nama_produk, jenis_produk, harga, id_produksi) 
+                VALUES ('$_POST[nama_produk]', '$_POST[jenis_produk]', '$_POST[harga]', '$_POST[id_produksi]')";
+            }
             if ($conn->query($sql) === TRUE) {
-                header('Location: http://localhost:8080/sipemA/admin/?mode=produk');
+                header('Location: http://localhost:8080/sipemA/admin/?mod=produk');
             }else {
                 $err['msg']= "Error: " . $sql . "<br>" . $conn->error;
             }}
@@ -33,17 +39,18 @@ switch (@$_GET['page']){
         }
     break;
     case 'edit':
-        $produk ="select * from produk where md5(kode_produk)='$_GET[id]'";
+        $produk ="select * from produk where md5(id_produksi)='$_GET[id]'";
         $produk=$conn->query($produk);
         $_POST=$produk->fetch_assoc();
         //var_dump($produk);
+        $_POST['id_produksi']=md5($_POST['id_produksi']);
         $content="views/produk/tambah.php";
         include_once 'views/template.php';
     break;
     case 'delete';
-        $produk ="delete from produk where md5(kode_produk)='$_GET[id]'";
+        $produk ="delete from produk where (id_produksi) ='$_GET[id]'";
         $produk=$conn->query($produk);
-        header('Location: http://localhost:8080/sipemA/admin/?mode=produk');
+        header('Location: http://localhost:8080/sipemA/admin/?mod=produk');
     break;
     default:
     $sql = "select * from produk";
