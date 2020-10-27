@@ -1,6 +1,6 @@
 <h4>Tambah Data</h4>
 <br>
-<form action="index.php?mod=produk&page=save" method="POST" enctype="multipart/form-data">
+<form action="index.php?mod=produk&page=save" method="POST">
     <div class="col-lg-6">
         <div class="form-group">
             <label for="">Nama Produk</label>
@@ -21,10 +21,6 @@
             <label for="">Harga</label>
             <input type="number" name="harga" required value="<?=(isset($_POST['harga']))?$_POST['harga']:'';?>" class="form-control">
             
-        </div>
-        <div class="form-group">
-        <label for="">Photo</label>
-        <input type="file" name="fileToUpload" id="fileToUpload">
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Save</button>

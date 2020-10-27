@@ -4,7 +4,7 @@
             <h4>Daftar Produk</h4>
         </div>
         <div class="pull-right">
-            <a href="index.php?mod=produk&page=add">
+            <a href="admin/index.php?mod=produk&page=add">
                 <button class="btn btn-primary">add</button>
             </a>
         </div>
@@ -21,7 +21,7 @@
                     <td>Jenis Produk</td>
                     <td>Harga</td>
                     <td>Kode Produk</td>
-                    <td>Photo</td>
+                    
                     <td>Aksi</td>
                 </tr>
             </thead>
@@ -35,7 +35,6 @@
                     <td><?=$row['jenis_produk']?></td>
                     <td>Rp. <?=number_format($row['harga'])?></td>
                     <td><?=$row['kode_produk']?></td>
-                    <td><img src="../media/<?= $row['fileToUpload']?>" height="50px"></td>
                     
                     <td>
                         <a href="index.php?mod=produk&page=edit&id=<?=md5($row['id_produksi'])?>"><i

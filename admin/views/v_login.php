@@ -31,7 +31,9 @@
         <label><input type="checkbox"> Remember me</label>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
+      
     </form>
+    
   </div>
 
 </body>
