@@ -6,9 +6,10 @@ if($con ->auth()){
     switch(@$_GET['mod']){
         case 'a_data' :
             include_once 'controller/a_data.php';
-  
         case 'produk' :
             include_once 'controller/produk.php';
+        case 'pembeli' :
+            include_once 'controller/pembeli.php';
             break;
         default;
             include_once 'controller/home.php';

@@ -1,39 +1,44 @@
 <div class="container-fluid">
-    
+    <div class="row">
         <div class="pull-left">
-            <h4>Data Admin</h4>
+            <h4>Daftar Pembeli</h4>
         </div>
         <div class="pull-right">
-            <a href="index.php?mod=a_data&page=add">
+            <a href="index.php?mod=pembeli&page=add">
                 <button class="btn btn-primary">add</button>
             </a>
         </div>
     </div>
-    
+    <div class="row">
         <table class="table">
             <thead>
                 <tr>
+                    <td>
+                        #
+                    </td>
                     
-                    <td>ID</td>
+                    <td>Nama</td>
                     <td>Email</td>
-                    <td>Password</td>
-                    <td>Status</td>
+                    <td>No. Telp</td>
+                    <td>Alamat</td>
                     <td>Aksi</td>
                 </tr>
             </thead>
             <tbody>
-                <?php if($a_data!=NULL){
+                <?php if($pembeli!=NULL){
                 $no=1;
-                foreach($a_data as $row){?>
+                foreach($pembeli as $row){?>
                 <tr>
-                    <td><?=$row['id_admin']?></td>
+                    <td><?=$no?></td>
+                    <td><?=$row['nama_user']?></td>
                     <td><?=$row['email']?></td>
-                    <td><?=($row['password'])?></td>
-                    <td><?=$row['status']?></td>
+                    
+                    <td><?=$row['telp_user']?></td>
+                    <td><?=$row['alamat']?></td>
                     <td>
-                        <a href="index.php?mod=a_data&page=edit&id=<?=md5($row['id_admin'])?>"><i
+                        <a href="index.php?mod=pembeli&page=edit&id=<?=md5($row['telp_user'])?>"><i
                                 class="fa fa-pencil"></i> </a>
-                        <a href="index.php?mod=a_data&page=delete&id=<?=($row['id_admin'])?>"><i
+                        <a href="index.php?mod=pembeli&page=delete&id=<?=($row['telp_user'])?>"><i
                                 class="fa fa-trash"></i> </a>
                     </td>
                 </tr>
